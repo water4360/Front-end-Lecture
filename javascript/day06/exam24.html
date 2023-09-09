@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트 적용 해보기</title>
+    <script>
+
+        //창과 관련된 이벤트 
+        window.onload = function() {
+            //고전적 이벤트 모델
+            let btn = document.getElementById('btnClick')
+            btn.onclick = function() {
+                alert('스크립트에서 onclick 적용했어요!')
+            }
+
+            let hTag = document.createElement('h1')
+            let text = document.createTextNode('클릭3')
+            hTag.appendChild(text)
+
+            document.body.appendChild(hTag)
+
+            hTag.style.backgroundColor = 'salmon'
+            hTag.onclick = function() {
+                alert('글자를 클릭했어요')
+                this.style.color = 'white'
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <!-- 인라인 이벤트 모델 제어 -->
+    <button onclick="alert('뿅!')">클릭1</button>
+    <button id="btnClick">클릭2</button>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이 벤 트 버 블 링(자식->부모로 적용)</title>
+    <script>
+        window.onload = function() {
+            let divTag = document.querySelector('div')
+            let hTag = document.querySelector('h1')
+            let spanTag = document.querySelector('span')
+
+
+            divTag.onclick = function() {
+                alert('div click!')
+                this.style.backgroundColor = 'salmon'
+            }
+
+            //생략되었지만 이벤트행위가 인자(e)로 넘어옴
+            hTag.onclick = function(e) {
+                alert('h1 click!')
+                this.style.backgroundColor = 'seagreen'
+                
+                //해당 행위로 연속 버블링을 취소할 수 있음.
+                //h의 부모인 div의 이벤트는 실행되지 않음.
+                e.cancelBubble = true
+            }
+
+            spanTag.onclick = function() {
+                alert('span click!')
+                this.style.backgroundColor = 'royalblue'
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <h1>
+            <span>Hello</span>
+        </h1>
+    </div>
+</body>
+</html>
