@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>innerHTML, 그리고 Text</title>
+    <script>
+        window.onload = function() {
+            // html은 태그까지. text는 내용만.
+            let html = document.body.innerHTML
+            let text = document.body.innerText
+
+            alert(`html : ${html}\ntest : ${text}`)
+
+            //body의 html을 수정하기
+            document.body.innerHTML = '<h2>이렇게 수정되었지요</h2>'
+            // document.body.innerText = '<h2>이렇게 수정되었지요</h2>'
+        }
+
+    </script>
+</head>
+<body>
+    <h1>Hello</h1>
+    안녕하세요
+</body>
+</html>

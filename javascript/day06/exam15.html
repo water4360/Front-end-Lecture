@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+      function func(a, b, c) {
+        document.write(`a : ${a} b = ${b} c = ${c}`)  
+      }
+
+      function func02(...numbers) {
+        console.log(numbers) 
+      }
+
+      //최소 숫자2개 이상
+      function func03(a, b, ...args) {
+        console.log(a, b, args) 
+
+      }
+
+      func03(10, 20, 30)
+      // func(10, 20, 30)
+
+      let array = [5, 6, 2]
+      func03(...array)
+      func03(10, 20, 30, 40, 50)
+
+      // func(array)
+      // array를 출력하고 싶다면 이렇게 func호출하는 게 아니라
+      // idx를 넣어줘야 값이 나오는 것. 그런데 비효율적이지.
+      // func(array[0], array[1], array[2])
+
+      //func를 호출할 때 apply 함수를 씀.
+      //함수이름.apply()
+      //func를 호출하는 대상(null)은 없이 인자로 (list)를 넘김.
+      // func.apply(null, array)
+
+      // func.apply(A)
+      //A객체에 func가 없지만, 있는것처럼 실행시키게 할때.
+      //자매품 콜함수. 대신 얘는 매개변수 일일이 써야되고. apply는 알아서 매칭이라 좀 더 편함.
+
+      // 전개연산자(...) << 파이썬에서의 unpacking 같은 용도일까?
+      // func(...array)
+      // func02(5,6,2)
+      func02(...array)
+      
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

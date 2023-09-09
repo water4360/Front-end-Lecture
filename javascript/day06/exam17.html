@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        alert('현재 URL : '+ location.href)
+        //자바로 이동시키기. 확인=True, 취소=False
+        if(confirm('NAVER로 이동할까요?')) {
+            //방법1 - 가장 일반적.
+            location.href = 'https://www.naver.com'
+            //방법2 location = 'https://www.naver.com'
+            //방법3 location.assign('https://www.naver.com')
+        }
+
+        history.back()
+        history.go(-1)
+
+    </script>
+</head>
+<body>
+    <a href="https://www.naver.com">NAVER로 이동</a>
+</body>
+</html>

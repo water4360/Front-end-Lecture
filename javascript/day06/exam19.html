@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>온 클 릭</title>
+    <script>
+            
+            // 이렇게 객체를 생성해서 만들 수 있음.
+            let audio = new Audio()
+            audio.src = '../../src/Kalimba.mp3'
+
+    </script>
+</head>
+<body>
+    <!-- <audio src="../src/Kalimba.mp3" controls autoplay></audio> -->
+    <!-- onclick 내에는 자바스크립트 문법만 가능! -->
+    <input type="button" value="재생하기" onclick="audio.play()">
+    <button onclick="audio.pause()">멈추기</button>
+</body>
+</html>

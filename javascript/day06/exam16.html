@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browser 객 체 모 델</title>
+    <script>
+        //팝업창을 떠올려보자.
+        //모니터의 0,0을 기준으로 띄워짐.
+        let sub = window.open("", "", "width=500, height=400")
+
+        //팝업창이 띄워지지 않았다면 알림을 띄우지.
+        if(!sub) {
+            alert('팝업창 제한을 해제해주세요!')
+        }
+        sub.moveTo(100, 100)
+
+        //위치를 옮겨보자
+        // sub.moveTo(100, 100)
+        //상대적 이동. 단 충접됨.
+        // sub.moveBy(100, 100)
+        // sub.moveBy(100, 100)
+
+
+
+        // 1초마다 50,50씩 이동함
+        let move = setInterval(function() {
+            sub.moveBy(50, 50)
+        }, 1000)
+
+        //6초가 지나면 위의 interval 제거
+        //전체화면으로. screen 객체의 사이즈로
+        setTimeout(function() {
+            clearInterval(move)
+            sub.resizeTo(screen.width, screen.height)
+        }, 6000)
+
+        // 요즘엔 팝업보다는 모달창을 많이 씀
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>윈 도 우 온 로 드</title>
+    <style>
+        img {
+            border: 5px solid salmon;
+        }
+    </style>
+    <script>
+        // 이때의 출력 결과는? null. body보다 먼저 실행되기 때문.
+        console.log(document.querySelector('img'))
+
+        //jquery에서는 document ready?
+        //onload = 다 그려지고 나면.
+        window.onload = function() {
+            console.log(document.querySelector('img'))
+        }
+
+    </script>
+</head>
+<body>
+    <img src="https://search.pstatic.net/sunny/?src=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F97%2Fbb%2F96%2F97bb968b2b74aaf8f69e56b6cd636a2c.jpg&type=a340">
+</body>
+</html>

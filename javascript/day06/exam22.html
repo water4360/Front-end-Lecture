@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Script로 body요소 만들기</title>
+    <script>
+        window.onload = function () {
+
+            // 태그를 만들었음.
+            let h1Tag = document.createElement('h1')
+            // 노드형 텍스트.
+            let text = document.createTextNode('HELLO WORLD')
+            
+            h1Tag.appendChild(text)
+            console.log(h1Tag)
+
+            document.body.appendChild(h1Tag)
+
+            let imgTag = document.createElement('img')
+            // imgTag.src = 'https://search.pstatic.net/sunny/?src=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F97%2Fbb%2F96%2F97bb968b2b74aaf8f69e56b6cd636a2c.jpg&type=a340'
+            imgTag.setAttribute('src', 'https://search.pstatic.net/sunny/?src=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F97%2Fbb%2F96%2F97bb968b2b74aaf8f69e56b6cd636a2c.jpg&type=a340')
+
+            document.body.appendChild(imgTag)
+
+
+
+            // 이미지를 누르면 naver로 이동하도록 만들기.
+            // a Tag, href, target
+            let aTag = document.createElement('a')
+            aTag.href = 'https://www.naver.com'
+            aTag.target = '_blank'
+            // aTag.setAttribute('href', 'https://www.naver.com')
+            // aTag.setAttribute('target', '_blank')
+            aTag.appendChild(imgTag)
+
+            //항상 document body에 추가해주어야.
+            document.body.appendChild(aTag)
+
+
+
+            
+        }
+    </script>
+</head>
+<body>
+    <div>
+        
+    </div>
+    <!-- <h1>Hello World!!!</h1>
+        <img src="https://search.pstatic.net/sunny/?src=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F97%2Fbb%2F96%2F97bb968b2b74aaf8f69e56b6cd636a2c.jpg&type=a340">
+
+     -->
+</body>
+</html>

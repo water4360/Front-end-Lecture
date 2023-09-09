@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getElement, querySelector를 활용한 innerHTML</title>
+    <script>
+        window.onload = function() {
+            //h2Tag라는 이름의 ID를 가진 요소의 html을 '~~'로 변경
+            let h2Tag = document.getElementById("h2Tag")
+            console.log(h2Tag)
+            h2Tag.innerHTML = '<h2>Hello!!</h2>'
+
+            // 태그로 선택하는 방법.
+            // 단, 제일 처음으로 나온 p태그만 검색!
+            let pTag = document.querySelector('p')
+            console.log(pTag)
+            
+            // 다중 검색하면 배열로 받아옴.
+            let pTags = document.querySelectorAll('p')
+            console.log(pTags)
+
+            pTag = document.querySelector('#pTag')
+            console.log(pTag)
+
+            pTag.innerText = 'id를 붙인 pTag 내용'
+
+
+        }
+
+
+        // alert('!!')
+    </script>
+</head>
+<body>
+    <div>
+        <h2 id="h2Tag">DIV 제목</h2>
+        <p>
+            안녕하세요!!!
+        </p>
+    </div>
+    <h2>또다른 h2 제목</h2>
+    <p id="pTag">
+        또다른 p
+    </p>
+</body>
+</html>
