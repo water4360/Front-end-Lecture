@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>객체 내의 함수, 그리고 this</title>
+    <script>
+      //info 내의 함수는 익명함수. 함수명 쓰지 않음.
+      // JS에서는 this 생략 불가.
+      // 백틱은 띄어쓰기, 엔터, 탭 다 인식.
+      let person = {
+        name: "서주",
+        phone: "010-1111-2222",
+        addr: "경기도 성남시 수정로398",
+        info: function () {
+          //   alert("info()...");
+          //           let msg = `name : ${this.name}
+          // phone : ${this.phone}
+          // addr : ${this.addr}`;
+          let msg = "";
+          with (this) {
+            for (let key in this) {
+              //이렇게 key값을 찍는것도 가능(name, phone...info까지.)
+              //   console.log(key);
+              // info가 아닌 경우에만.
+              //   if (key != 'info') {
+              //또는 [key]의 value가 function 타입이 아닌 경우에만.
+              if (typeof this[key] !== "function") {
+                msg += `${key} : ${this[key]}\n`;
+              }
+            }
+
+            // msg += "name : " + name + "\n";
+            // msg += `phone : ${phone}` + "\n";
+            // msg += "addr : " + addr + "\n";
+          }
+          alert(msg);
+        },
+      };
+
+      person.info();
+    </script>
+  </head>
+  <body></body>
+</html>

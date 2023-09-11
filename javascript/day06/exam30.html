@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS의 객체</title>
+    <script>
+      // []로 쓰면 배열, {}로 쓰면 오브젝트
+      //-같은 특수기호가 들어갈땐 반드시 ''로 묶을 것.
+      // 그리고 person.office-phone 이렇게 X, person['office-phone'] 이렇게 O.
+      let person = {
+        name: "서주",
+        phone: "010-1111-2222",
+        "office-phone": "031-111-2222",
+        age: 28,
+      };
+
+      document.write(`name : ${person.name}<br>`);
+      document.write(`phone : ${person.phone}<br>`);
+      document.write(`office-phone : ${person["office-phone"]}<br>`);
+      document.write("<hr>");
+      document.write(`name 속성 존재여부 : ${"name" in person}<br>`);
+      document.write(`addr 속성 존재여부 : ${"addr" in person}<br>`);
+      document.write("<hr>");
+
+      person.addr = "경기도 성남시 수정로 398";
+      // console.log(person);
+      document.write(`addr 속성 존재여부 : ${"addr" in person}<br>`);
+      document.write("<hr>");
+
+      // exam31에서 다시 옴. with를 이용해서 this 대신 person으로 묶을 수도 있음.
+      with (person) {
+        document.write(`name : ${name}<br>`);
+        document.write(`addr : ${addr}<br>`);
+      }
+    </script>
+  </head>
+  <body></body>
+</html>
