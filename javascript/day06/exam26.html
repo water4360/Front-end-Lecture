@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>addEventListner와 Capturing</title>
+    <script>
+      window.onload = function () {
+        let btn = document.getElementById("btn");
+        // 고전이벤트모델 ex) 객체.onclick()...
+        // 표준이벤트모델 addEventListner(이벤트 속성, handler, capturing여부)
+        btn.addEventListener(
+          "click",
+          function () {
+            alert("button click...");
+          },
+          true
+        );
+
+        let spanTag = document.querySelector("span");
+        spanTag.addEventListener("click", function () {
+          alert("span click...");
+        });
+
+        // 반대로 부모에서 자식으로 내려가는 eventCapturing
+      };
+    </script>
+  </head>
+  <body>
+    <button id="btn"><span>Click 하세요</span></button>
+  </body>
+</html>
