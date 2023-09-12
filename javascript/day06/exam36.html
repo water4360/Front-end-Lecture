@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>속성의 은닉화(getter/setter)</title>
+    <script>
+      class Person {
+        constructor(name, phone, addr) {
+          this._name = name;
+          this._phone = phone;
+          this._addr = addr;
+        }
+
+        //getter/setter
+        get name() {
+          return this._name;
+        }
+
+        set name(name) {
+          this._name = name;
+        }
+
+        info() {
+          document.write(`이름 : ${this._name}<br>`);
+          document.write(`연락처 : ${this._phone}<br>`);
+          document.write(`주소 : ${this._addr}<br>`);
+          document.write(`<hr>`);
+        }
+      }
+      // 상속
+      class Doctor extends Person {
+        constructor(name, phone, addr, major) {
+          //Person의 constructor 소환
+          super(name, phone, addr);
+          this._major = major;
+        }
+      }
+
+      let p = new Person("서주", "010-1111-2222", "서울시");
+      //   document.write(`이름 : ${p.name}<br>`);
+      //   p.name = "서도하";
+      p.info();
+
+      let d = new Doctor("권본", "010-3333-4444", "경기도 성남시", "정형외과");
+      d.info();
+    </script>
+  </head>
+  <body></body>
+</html>
