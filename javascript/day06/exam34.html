@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>상속, 함수, 프로토타입</title>
+    <script>
+      function Person(n, ph, a) {
+        this.name = n;
+        this.phone = ph;
+        this.addr = a;
+
+        this.info = function () {
+          for (let key in this) {
+            if (typeof this[key] != "function") {
+              document.write(`${key} : ${this[key]}<br>`);
+            }
+          }
+        };
+      }
+
+      //new 로 만들어지는 모든 객체들(p, p2...)이 사용할 수 있도록.
+      Person.prototype.aaa = function () {
+        alert("call aaa()...");
+      };
+
+      let p = new Person("권율", "010-1111-2222", "서울");
+      let p2 = new Person("최윤이", "010-2222-3333", "부산");
+      p.aaa = function () {
+        alert("p.aaa() 호출...");
+      };
+      console.log(p);
+      p.info();
+      document.write(p.toString()); //JS에서의 상속개념은 프로토 타입 기반. 클래스상속X
+      p.aaa();
+    </script>
+  </head>
+  <body></body>
+</html>

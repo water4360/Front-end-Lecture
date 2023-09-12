@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>함수로 Person객체 생성하기</title>
+    <script>
+      function makePerson(n, ph, a) {
+        let p = {
+          name: n,
+          phone: ph,
+          addr: a,
+        };
+
+        return p;
+      }
+
+      let p = makePerson("백도하", "010-3333-4444", "경기도 성남시");
+      let persons = [p];
+      persons.push(makePerson("서주", "010-1111-2222", "제주시 애월읍"));
+
+      console.log(persons);
+    </script>
+  </head>
+  <body></body>
+</html>

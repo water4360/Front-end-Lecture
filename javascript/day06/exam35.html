@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>속성의 은닉화(함수)</title>
+    <script>
+      function Person(p_name, p_phone, p_addr) {
+        //this.속성이 아니라 지역변수로 선언함으로써 은닉화
+        let name = p_name;
+        let phone = p_phone;
+        let addr = p_addr;
+
+        // this.getName = function() {
+        //     return name
+        // } //이거 대신에 화살표 함수로 쓰면?
+        this.getName = () => name;
+
+        this.setName = function (new_name) {
+          name = new_name;
+        };
+      }
+
+      let p = new Person("서도하", "010-1111-2222", "서울시 동작구");
+      document.write(`변경전 이름 : ${p.getName()}<br>`);
+      p.setName("서인하");
+      document.write(`변경후 이름 : ${p.getName()}<br>`);
+    </script>
+  </head>
+  <body></body>
+</html>
