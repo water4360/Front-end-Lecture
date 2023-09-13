@@ -1,6 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
-import Greeting from "./hello";
+import Hello from "./Hello";
+import Hello2 from "./Hello2";
 
 function App() {
   // return은 트리 형태로 무조건 하나의 단위만.
@@ -9,7 +10,9 @@ function App() {
   return (
     <div>
       {/* <h1>Hello React!</h1> */}
-      <Greeting />
+      <Hello name="리액트" />
+      <Hello />
+      <Hello2 />
     </div>
   );
 }
