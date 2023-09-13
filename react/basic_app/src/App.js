@@ -12,6 +12,7 @@ function App() {
       {/* <h1>Hello React!</h1> */}
       <Hello name="리액트" />
       <Hello />
+      <Hello>GOOD-BYE</Hello>
       <Hello2 />
     </div>
   );

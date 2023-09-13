@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // window.onload = function() {
+        //     let btnTag = document.querySelector('button')
+        //     btnTag.onclick = function() {
+
+        //     }
+        //     btnTag.addEventListener('click', function() {
+
+        //     })
+        // }
+        function increaseCnt() {
+            // alert('click!')
+            cnt = document.getElementById("cnt")
+            cnt.innerText = parseInt(cnt.innerText) + 1
+        }
+    </script>
+</head>
+<body>
+    <span id="cnt">0</span>번 클릭
+    <button onclick="increaseCnt()">증가</button>
+</body>
+</html>

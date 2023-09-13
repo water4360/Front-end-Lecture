@@ -19,7 +19,7 @@ function Hello(props) {
     <div>
       <h1 style={style}>Hello React!!!!!</h1>
       <h1 className="hstyle">{msg}</h1>
-      <h1>안녕하세요 {props.name} !!</h1>
+      <h1>안녕하세요 {props.name} {props.children}</h1>
     </div>
   );
 }
