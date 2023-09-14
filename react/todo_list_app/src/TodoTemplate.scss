@@ -4,17 +4,18 @@
     margin-left: auto;
     margin-right: auto;
     margin-top: 5em;
-    ;
 }
 
 .todo-title {
     display: flex;
     background-color: seagreen;
     color:bisque;
-    min-height: 3em;
-    font-size: larger;
+    min-height: 2em;
+    font-size: xx-large;
+    font-weight: bolder;
     align-items: center;
     justify-content: center;
+    // border-radius: 5px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }

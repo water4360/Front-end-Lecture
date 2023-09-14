@@ -12,6 +12,9 @@ function App() {
         데이터를 전달받아서 넘겨야 하는 경우도 있기 때문에 알아둘 것.*/}
       {/* <div>청소하기</div> */}
       <TodoInput/>
+      {/* <TodoList>
+        <TodoItem/>  
+      </TodoList> */}
       Todo 목록...!
       
     </TodoTemplate>

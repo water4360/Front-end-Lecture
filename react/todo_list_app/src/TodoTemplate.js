@@ -1,4 +1,4 @@
-import './TodoTemplate.css'
+import './TodoTemplate.scss'
 
 // function TodoTemplate({name, children}) {
 function TodoTemplate({children}) {
@@ -7,7 +7,7 @@ function TodoTemplate({children}) {
 
     return(
     <div className="todoTemplate">
-        <h1  className="todo-title">TO-DO LIST</h1>
+        <div className="todo-title">TO-DO LIST</div>
         {/* {props.name} : {props.children} */}
         {/* {name} : {children} */}
         <div>{children}</div>

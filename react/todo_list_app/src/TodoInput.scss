@@ -1,0 +1,42 @@
+
+
+.todoInput {
+    display: flex;
+    background:whitesmoke;
+    margin-top: 2px;
+    border-radius: 3px;
+
+
+    // 중첩이 가능한 scss
+    input {
+        flex: 1;
+        font-size: 1rem;
+        padding: 0.5rem;
+        outline:none;
+        border:none;
+        background: none;
+        color: seagreen;
+        font-style: italic;
+        
+        //this와 같은 의미로.
+        &::placeholder {
+            color: lightgray
+        }
+    }
+
+    button {
+        font-weight: bold;
+        color: seagreen;
+        background:whitesmoke;
+        outline: none;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        font-size: 1.5rem;
+        &:hover {
+            background-color: seagreen;
+            color: white;
+        }
+    }
+}
+
