@@ -1,0 +1,53 @@
+.todoItem {
+    display: flex;
+    padding: 0.5rem;
+        
+    .text {
+        flex: 1;
+        margin-left: 0.5rem;
+        color: seagreen;
+        font-weight: bold;
+
+ 
+    }
+
+    .checkbox {
+        border: none;
+        outline: none;
+        cursor: pointer;
+        //클래스 checkbox인 것의 checkex 옵션이 true인, class가 text인 것.
+        &:checked+.text {
+            text-decoration: line-through;
+            color: lightgray;
+        }
+    }
+    
+
+    &:nth-child(2n+1) {
+        background-color: whitesmoke;
+        border-top : 0.5px solid seagreen;
+        border-bottom : 0.5px solid seagreen;
+    }
+
+    .checkBox {
+        cursor: pointer;
+    }
+
+    button {
+        display: flex;
+        cursor: pointer;
+        border: none;
+        outline: none;
+        background: none;
+        color: seagreen;
+        font-size: larger;
+
+        &:hover {
+            background-color: seagreen;
+            color: white;
+        }
+
+        
+    }
+
+}

@@ -1,7 +1,39 @@
 import TodoInput from './TodoInput';
 import TodoTemplate from './TodoTemplate';
+import TodoList from './TodoList';
+import { useRef, useState } from 'react';
+
+
+
 
 function App() {
+
+  const [todos, setTodos] = useState([
+    {no: 1, text:'일기쓰기', checked:true},
+  ])
+
+  const nextNo = useRef(2)
+
+  const addTodo = function(text) {
+    setTodos(todos.concat({no:nextNo.current, text:text, checked:false}))
+    nextNo.current++
+    
+  }
+
+  // 클릭한 no가 같은지 비교해서,
+  // no, text, checked 값이 전개연산자로 들어가고.
+  // checked 상태에 따라 토글되는 것.
+  const toggleTodo = function(no) {
+    setTodos(todos.map(todo => todo.no === no ? {...todo, checked : !todo.checked} : todo))
+  }
+
+  const deleteTodo = (no) => {
+    setTodos(todos.filter(todo => todo.no !== no))
+  
+  }
+
+
+
   return (
     // <TodoTemplate name="할일">
     <TodoTemplate>
@@ -11,12 +43,9 @@ function App() {
         
         데이터를 전달받아서 넘겨야 하는 경우도 있기 때문에 알아둘 것.*/}
       {/* <div>청소하기</div> */}
-      <TodoInput/>
-      {/* <TodoList>
-        <TodoItem/>  
-      </TodoList> */}
-      Todo 목록...!
-      
+      <TodoInput onAdd={addTodo}/>
+      {/* name=value 형태로 내려주기. */}
+      <TodoList todos={todos} toggleTodo={toggleTodo} deleteTodo={deleteTodo}/>
     </TodoTemplate>
   );
 }
