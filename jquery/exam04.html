@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>애니메이션animate</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: salmon;
+            position: absolute;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $('div').animate({
+                width: '200px',
+                height: '+=200px',
+                left: '100px',
+                opacity: '0.5'
+            }, 2000)
+            $('div').animate({
+                width: '100px',
+                height: '+=200px',
+                left: '200px',
+                top: '100px',
+                opacity: '0.2'
+            }, 2000)
+        })
+    </script>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

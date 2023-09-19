@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 슬라이딩(bxslider)</title>
+    <!-- <style>
+        img {
+            width: 200px;
+            height: 200px;
+        }
+    </style> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    
+    <script>
+        $(document).ready(function () {
+            $('.slider').bxSlider({
+                mode: 'fade',
+                auto: true,
+                slideWidth : 500
+            });
+            
+        })
+    </script>
+</head>
+
+<body>
+    <div class="slider">
+        <div><img src="../src/a.PNG" alt=""></div>
+        <div><img src="../src/b.PNG" alt=""></div>
+        <div><img src="../src/c.PNG" alt=""></div>
+    </div>
+
+</body>
+
+</html>

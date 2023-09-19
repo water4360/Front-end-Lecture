@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery로 속성 제어하기</title>
+    <style>
+        #div01 {
+            background-color: seagreen;
+        }
+    </style>
+    <!-- 구글cdn버전 -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
+    <!-- jquery release 버전 -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // a태그의 href속성이 naver~~인 것
+            // $('a[href="http://www.naver.com"]').hide()
+            // input태그에서 타입이 button인 것
+            // $('input:button').hide(1000)
+            // button 태그인 것
+            // $('button').hide(1000)
+            // 타입이 button인 것들
+            // $(':button').hide(1000)
+
+            //onclick 대신
+            $(':button').click(function () {
+                // $('a').hide(1000)
+                // $(this).hide(1000)
+                $(this).hide('fast')
+            })
+
+            //body의 직속자식인 h1만 선택
+            $('body > h1').dblclick(function() {
+                $(this).hide(1000)
+            })
+
+            /*
+            $('#div01').mouseenter(function(){
+                $(this).css('background-color', 'lavender')
+            })
+
+            $('#div01').mouseleave(function(){
+                $(this).css({
+                    'background-color':'seagreen'
+                })
+            })
+            */
+           //hover(mouseenter함수1, mouseleave함수2)
+           $('#div01').hover(function(){
+                $(this).css('background-color', 'pink')
+           }, function() {
+                $(this).css('background-color', 'royalblue')
+           })
+        })
+    </script>
+</head>
+
+<body>
+    <div id="div01">
+        div영역입니다<br>
+        마우스를 진입시켜보세요
+    </div>
+    <h1>첫번째 문장</h1>
+    <h1>두번째 문장</h1>
+    <div>
+        <h1>세번째 문장</h1>
+    </div>
+    <h1>네번째 문장</h1>
+    <input type="text"><br>
+    <input type="button" value="버튼01">
+    <button>버튼02</button>
+    <a href="http://www.naver.com">네이버</a>
+</body>
+
+</html>

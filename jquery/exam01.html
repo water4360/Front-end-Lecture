@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery로 CSS속성 제어하기</title>
+    <!-- lib에서 가져올 것 필요. -->
+    <script src="./lib/jquery-3.7.1.min.js"></script>
+    <script>
+    //  jQuery의 기본 형태 : $(selector).function()
+    // window.onload 대신에 document.ready를 쓰는 것.
+    $(document).ready(function() {
+        // $('ul li:first').hide() //ul 소속 li중 가장 첫번째 li 하나만.(호랑이)
+        $('ul li:first-child').hide() //ul 소속 li의 가장 첫번째 li들 모두 삭제.(호랑이, 김밥)
+    })
+
+    $(document).ready(function() {
+        // alert('start')
+        // $('h1').hide(1000)
+        // $('#id01').hide(1000)
+        // $('.c01').hide(1000)
+        // $('h1:first').hide(1000)
+        
+        
+    })
+
+    // $(document).ready(function() {
+    //     alert('document.ready()222!')
+    // })
+
+    // //document.ready 다 쓰기 번거로우니 익명함수처럼 바로 function쓰는 것도 가능!
+    // $(function() {
+    //     alert('document.ready()3333!')
+    // })
+
+    </script>
+</head>
+<body>
+    <h1>동물친구들</h1>
+    <ul>
+        <li>호랑이</li>
+        <li>사자</li>
+        <li>팬더</li>
+        <li>코끼리</li>
+    </ul>
+    <h1>음식친구들</h1>
+    <ul>
+        <li>떡볶이</li>
+        <li>순대</li>
+        <li>튀김</li>
+    </ul>
+    <h1 id="id01">Hello</h1>
+    <h1 class="c01" >Hari</h1>
+</body>
+</html>

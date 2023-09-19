@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document에 동적으로 추가하기(class)</title>
+    <style>
+        .salmon {
+            color: salmon;
+        }
+
+        .blue {
+            color: royalblue;
+        }
+
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#addBtn').click(function () {
+                //<h1>세번째 문장 동적으로 추가하기</h1>
+                // $('div').append('<h1>세번째문장</h1>')
+                
+                //앞에 붙이고 싶다면? prepend
+                // $('div').prepend('<h1>세번째문장</h1>')
+
+                // div와 동일레벨로 앞, 뒤에 추가.
+                $('div').before('<h1>세번째문장</h1>')
+                $('div').after('<h1>세번째문장</h1>')
+            })
+
+            $('#delBtn').click(function() {
+                //remove는 자기 자신을 포함해서 삭제.
+                //empty는 자신은 두고 소속된 자식만 삭제.
+                $('h1:first').remove()
+            })
+
+            $('#redBtn').click(function(){
+                // $('h1').css('color', 'salmon')
+                $('h1').addClass('salmon')
+                $('h1').removeClass('blue')
+            })
+
+            $('#blueBtn').click(function(){
+                // $('h1').css('color', 'royalblue')
+                $('h1').addClass('blue')
+                $('h1').removeClass('salmon')
+            })
+
+        })
+
+    </script>
+</head>
+
+<body>
+    <div>
+        <h1>첫번째문장</h1>
+        <h1>두번째문장</h1>
+    </div>
+    <button id="addBtn">추가</button>
+    <button id="delBtn">삭제</button>
+    <button id="redBtn">연어</button>
+    <button id="blueBtn">바다</button>
+
+</body>
+
+</html>

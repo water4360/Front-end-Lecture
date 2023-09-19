@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트 일괄처리 on함수</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('input').keyup(function () {
+                console.log($(this).val());
+            })
+            
+            //이벤트를 객체화해서 일괄처리하는 on함수
+            $('div').on({
+                'click': function(){
+                    $(this).css({
+                        'color' : 'pink',
+                        'font-weight' : 'bold'
+                    })
+                    
+                }, 'mouseenter' : function() {
+                    $(this).css('background-color', 'seagreen')
+                }, 'mouseleave' : function() {
+                    $(this).css('background-color', 'salmon')
+                }
+            })
+
+
+        })
+    </script>
+</head>
+
+<body>
+    <div>
+        ID <input type="text" name="id">
+    </div>
+</body>
+
+</html>

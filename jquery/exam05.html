@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>toggle함수들</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        h1 {
+            display: none;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            // 따로 있으면 toggle; 찍은 후 바로 alert 실행.
+            // function안에 넣어줘야 3초 후 실행
+            $('h1').toggle(3000, function() {
+                alert('complete')
+            })
+            
+            /*
+                3초에 걸쳐 "첫번째 문장"을 화면에 보인 뒤,
+                complete 메세지를 경고창으로 띄우기
+            */
+        })
+    </script>
+</head>
+<body>
+    <h1>첫번째 문장</h1>
+</body>
+</html>

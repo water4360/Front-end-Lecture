@@ -1,3 +1,4 @@
 {
-  "git.ignoreLimitWarning": true
+  "git.ignoreLimitWarning": true,
+  "livePreview.defaultPreviewPath": "/jquery/exam01.html"
 }
