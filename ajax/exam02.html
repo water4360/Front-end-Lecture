@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>일별 박스오피스 조회 서비스</title>
+    <style>
+        #resultBoxOffice {
+            border: 3px solid seagreen;
+            width: 600px;
+            height: 600px;
+
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#searchBtn').click(function () {
+                let searchDate = $('#searchDate').val()
+                searchDate = searchDate.split('-').join('')
+                console.log(searchDate);
+
+                $.ajax({
+                    url: 'http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json',
+                    type: 'get',
+                    data: {
+                        key: '2f6f629daa0405dd4a6b385515b40be8',
+                        targetDt: searchDate
+                    },
+                    success: callback,
+                    error: function () {
+                        alert('실패..')
+                    }
+                })
+            })
+        })
+
+        function callback(result) {
+            let list = result.boxOfficeResult.dailyBoxOfficeList
+            for (let movieInfo of list) {
+                let rank = movieInfo.rank
+                let name = movieInfo.movieNm
+                let audiCnt = movieInfo.audiCnt
+
+                $('#resultBoxOffice').append(`<strong>${rank}위</strong> <${name}> ${audiCnt}명<br>`)
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <h2>일별 박스오피스 조회</h2>
+    조회날짜 <input type="date" id="searchDate">
+    <button id="searchBtn">검색</button>
+    <h3>검색결과</h3>
+    <div id="resultBoxOffice"></div>
+</body>
+
+</html>
